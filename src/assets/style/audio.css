@@ -1,0 +1,191 @@
+/* yinna20200711 */
+
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform:rotate(0);transform:rotate(0)
+    }
+    to{
+        -webkit-transform:rotate(1turn);transform:rotate(1turn)
+    }
+}
+@keyframes spin{
+    0%{
+        -webkit-transform:rotate(0);transform:rotate(0)
+    }
+    to{
+        -webkit-transform:rotate(1turn);transform:rotate(1turn)
+    }
+}
+.green-audio-player{
+    min-width:300px;
+    width:830px;
+    height:60px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    padding: 0 20px 0 16px;
+    background-color:#f7f7f7;
+}
+.green-audio-player img,.green-audio-player svg{
+    display:block
+}
+.green-audio-player .play-pause-btn{
+    display:none;
+    cursor:pointer;
+    width: 26px;
+    height: 26px;
+    background: url('../images/openVideo.png') no-repeat;
+    background-size: 26px auto;
+}
+/* 音频加载 */
+.green-audio-player .loading .loading__spinner{
+    width:16px;
+    height:16px;
+    border:2px solid #b0b0b0;
+    border-right-color:transparent;
+    border-radius:50%;
+    -webkit-animation:spin .4s linear infinite;
+    animation:spin .4s linear infinite
+}
+/* 播放进度条 */
+.green-audio-player .slider{
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    background-color:#dfdfdf;
+    cursor:pointer;
+    position:relative;
+}
+.green-audio-player .slider .progress{
+    background-color:#121212;
+    border-radius:inherit;
+    position:absolute;
+    pointer-events:none
+}
+.green-audio-player .slider .progress .pin{
+    height:12px;
+    width:12px;
+    border-radius:8px;
+    background-color:#121212;
+    position:absolute;
+    pointer-events:all;
+}
+.green-audio-player .controls{
+    font-size:12px;
+    line-height:20px;
+    color:#999;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-flex:1;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    -webkit-box-pack:justify;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+}
+.green-audio-player .controls .controls__slider{
+    margin: 0 22px 0 20px;
+    height:4px
+}
+.green-audio-player .controls{
+    position: relative;
+}
+.green-audio-player .controls .controls__current-time {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+.green-audio-player .controls .controls__total-time {
+    display: inline-block;
+    position: absolute;
+    right: 22px;
+    top: 8px;
+}
+.green-audio-player .controls .controls__slider .controls__progress{
+    width:0;
+    height:100%
+}
+.green-audio-player .controls .controls__slider .controls__progress .progress__pin{
+    right:-12px;
+    top:-4px
+}
+.green-audio-player .controls span{
+    cursor:default
+}
+.green-audio-player .volume{
+    position:relative
+}
+.green-audio-player .volume .volume__button{
+    width: 16px;
+    height: 14px;
+    background: url('../images/listen.png') no-repeat;
+    background-size: 16px auto;
+    cursor:pointer
+}
+.green-audio-player .volume .volume__button.open path{
+    fill:#999;
+}
+.green-audio-player .volume .volume__controls{
+    width:30px;
+    height:50px;
+    position:absolute;
+    left:-7px;
+    top:-50px;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex
+}
+.green-audio-player .volume .volume__controls.hidden{
+    display:none
+}
+/* .green-audio-player .volume .volume__controls.top{
+    bottom:52px;
+    left:-3px
+} */
+.green-audio-player .volume .volume__controls.middle{
+    bottom:-54px;
+    left:54px
+}
+.green-audio-player .volume .volume__controls.bottom{
+    bottom:-164px;
+    left:-3px
+}
+/* 总共的音量条 */
+.green-audio-player .volume .volume__controls .volume__slider{
+    margin-bottom:10px;
+    width:4px;
+    height: 50px;
+}
+/* 黑色音量条 */
+.green-audio-player .volume .volume__controls .volume__slider .volume__progress{
+    bottom:0;
+    height:100%;
+    width:4px
+}
+/* 音量球 */
+.green-audio-player .volume .volume__controls .volume__slider .volume__progress .volume__pin{
+    left:-4px;
+    top:-10px
+}

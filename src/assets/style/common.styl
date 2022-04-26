@@ -1,0 +1,64 @@
+html
+  overflow hidden
+.btn-group-config
+  .btn-config
+    width 146px
+    height 46px
+    margin 0 30px
+    font-size 16px
+    line-height 46px
+    color #577eff
+    border-color currentColor
+    &:hover
+      color #fff
+      background-color rgba(128, 156, 252, 0.93)
+      border-color rgba(128, 156, 252, 0.93)
+.btn-group-center
+  text-align center
+
+.liActive 
+  color $primary-color
+
+// 全屏loading
+.fullScreen-loading
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background rgba(0, 0, 0, .3)
+  z-index 1000
+  .ant-spin-dot
+    position absolute
+    height 50px
+    width 50px
+    font-size 50px
+    color #577eff
+    top 0
+    left 0
+    bottom 0
+    right 0
+    margin auto
+  .ant-spin-lg .ant-spin-dot
+    width 80px
+    height 80px
+    font-size 80px
+  .ant-spin-text
+    position relative
+    top 50%
+    font-size 16px
+    padding-top 40px
+    user-select none
+    color #577eff
+
+.ant-table-thead
+  tr
+    th
+      background #edf2fc
+.ant-notification-notice-with-icon .ant-notification-notice-description
+  word-break break-all
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)
+  background $primary-color
+  border $primary-color
+.ant-radio-button-wrapper
+    vertical-align top

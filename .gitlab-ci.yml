@@ -1,0 +1,35 @@
+
+
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+  - node_modules/
+
+stages:
+  # - test
+  - deploy
+
+# test:
+#   stage: test
+#   only:
+#     - develop
+#     - dev/zhangxu
+#     - master
+#   script:
+#     - npm install
+#     - npm run test:unit
+#   tags:
+#     - 208-runner
+
+deploy:
+  stage: deploy
+  script:
+    - npm install
+    - npm run deploy
+  only:
+    - develop
+    # - dev/zhangxu
+    - master
+  tags:
+    - 208-runner

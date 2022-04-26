@@ -1,0 +1,602 @@
+/* 按钮 */
+.ant-btn {
+    /* 为了测试使用，实际项目上要删除 */
+    font-family: 'PingFang SC'; 
+    height: auto;
+    padding: 6px 17px;
+    background-color: #fff;
+    border: 1px solid #3171f5;
+    border-radius: 4px;
+    color: #3171f5;
+    font-size: 16px;
+    line-height: 22px;
+}
+.ant-btn:hover, .ant-btn:focus {
+    border: 1px solid #3171f5;
+    color: #3171f5;
+}
+.ant-btn-primary {
+    color: #fff;
+    background-color: #3171f5;
+}
+.ant-btn-primary:focus, .ant-btn-primary:hover,.ant-btn-primary:active{
+    color: #fff;
+    background-color: #2c66dc;
+}
+.ant-btn-primary:focus{
+    border-color: #ccc;
+}
+.ant-btn-primary:hover {
+    border-color: #3171f5;
+    box-shadow: 0px 7px 18px 0px rgba(49, 113, 245, 0.5);
+}
+.ant-btn::before {
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #5a8df7;
+}
+.ant-btn > span{
+    position: relative;
+    z-index: 2;
+    font-family: 'Arial';
+}
+/* 禁用按钮 */
+.ant-btn-primary[disabled], .ant-btn-primary[disabled]:focus, .ant-btn-primary[disabled]:active,.ant-btn-primary[disabled]:hover{
+    background-color: #eeeff3;
+    border-color: #eeeff3;
+    color: #c4c7cf;
+    font-size: 16px;
+    line-height: 22px;
+}
+/* 次按钮 */
+/* 删除loading左侧的加载图标 */
+.ant-btn .anticon {
+    display: none;
+}
+@keyframes loadingAnimate {
+    from { margin-right: 100px; }
+    to { margin-right: 0; }
+}
+.ant-btn-loading {
+    padding: 7px 18px 7px 19px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #5a8df7;
+    border-color: #5a8df7;
+}
+.ant-btn-loading:before {
+    background-color: #3171f5;
+    animation: loadingAnimate 3s;
+}
+@keyframes loadingAnimate1 {
+    from { margin-right: 100px; }
+    to { margin-right: 0; }
+}
+.loading1 {
+    background: #fff;
+}
+.loading1:before {
+    background-color: #d5e2fd;
+    animation: loadingAnimate1 3s;
+}
+.ant-btn-loading:before, .loading1:before{
+    margin-right: 0px;
+    z-index: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.ant-btn.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline):not(.ant-btn-icon-only) {
+    padding-left: 11px;
+}
+.ant-btn-loading2,.ant-btn-loading2:hover, .ant-btn-loading2:focus, .ant-btn-loading2:not([disabled]):active{
+    background: rgba(49,113,245,0.1);
+    color: #3171f5; 
+}
+.loading2 {
+    position: relative;
+    background: rgba(49,113,245,0.1);
+    padding: 9px 9px 9px 28px!important;
+    font-size: 14px;
+    line-height: 16px;
+}
+.loading2 span {
+    margin-left: 0!important;
+}
+@keyframes loadingRotate {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+.loading2::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(49,113,245,0.1);
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    background: url('./loadingBlue.png') no-repeat;
+    background-size: 14px auto;
+    transform: rotate(360deg);
+    animation: loadingRotate 1.6s linear infinite;
+}
+.ant-btn-loading3, .ant-btn-loading4{
+    padding: 6px 17px 5px 17px!important;
+}
+.ant-btn-loading3,.ant-btn-loading3:hover, .ant-btn-loading3:focus, .ant-btn-loading3:not([disabled]):active{
+    background: #e8e9ed;
+    border-color: #e8e9ed;
+    color: #666;
+}
+.loading3 {
+    background: #f3f4f6;
+    border-color: #f3f4f6;
+    padding: 9px 18px 9px 11px!important;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666;
+}
+.loading3::before {
+    content: '';
+    display: inline-block;
+    background:#e8e9ed;
+    z-index: 1;
+}
+.ant-btn-loading4,.ant-btn-loading4:hover, .ant-btn-loading4:focus, .ant-btn-loading4:not([disabled]):active,
+.ant-btn-loading5,.ant-btn-loading5:hover, .ant-btn-loading5:focus, .ant-btn-loading5:not([disabled]):active{
+    background: #fff;
+    border-color: #ccc;
+    color: #666;
+}
+.loading4, .loading5{
+    background: #fff;
+    border-color: #ccc;
+    padding: 9px 18px 9px 11px!important;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666;
+}
+.loading4::before, .loading5::before{
+    content: '';
+    display: inline-block;
+    background:#f5f5f5;
+    z-index: 1;
+}
+.ant-btn-loading5,.ant-btn-loading5:hover, .ant-btn-loading5:focus, .ant-btn-loading5:not([disabled]):active{
+    color: #999;
+}
+.loading5 {
+    color: #999;
+}
+/* 图标按钮 */
+.primaryIcon .anticon{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+}
+.primaryIcon .anticon + span{
+    margin-left: 6px;
+    line-height: 21px;
+}
+.iconBtn {
+    padding: 3px;
+    background-color: transparent;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #3171f5;
+}
+.iconSuccess {
+    color: #09bb07;
+}
+.iconDisable {
+    color: #999;
+}
+.iconBtn:hover {
+    cursor: pointer;
+    padding: 3px;
+    background-color: #dbe2e9;
+}
+/* 文字按钮 */
+.textBtn,.textBtn:focus,.textBtn:active,.textBtn:hover,.textBtn:visited{
+    padding: 0;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.primaryLink[disabled], .primaryLink[disabled]:focus,.primaryLink[disabled]:active,.primaryLink[disabled]:hover,.primaryLink[disabled]:visited {
+    color: rgba(49,113,245,0.5);
+}
+.primaryLink, .primaryLink:focus,.primaryLink:active,.primaryLink:hover,.primaryLink:visited{
+    color: #3171f5;
+}
+.successLink[disabled], .successLink[disabled]:focus,.successLink[disabled]:active,.successLink[disabled]:hover,.successLink[disabled]:visited{
+    color: rgba(9,187,7, 0.5);
+}
+.successLink, .successLink:focus,.successLink:active,.successLink:hover,.successLink:visited{
+    color: #09bb07;
+}
+.warnLink[disabled], .warnLink[disabled]:focus,.warnLink[disabled]:active,.warnLink[disabled]:hover,.warnLink[disabled]:visited{
+    color: rgba(249,159,31, 0.5);
+}
+.warnLink, .warnLink:focus,.warnLink:active,.warnLink:hover,.warnLink:visited{
+    color: #f99f1f;
+}
+.errorLink[disabled], .errorLink[disabled]:focus,.errorLink[disabled]:active,.errorLink[disabled]:hover,.errorLink[disabled]:visited{
+    color: rgba(249,58,74, 0.5);
+}
+.errorLink, .errorLink:focus,.errorLink:active,.errorLink:hover,.errorLink:visited{
+    color: #f93a4a;
+}
+.infoLink[disabled], .infoLink[disabled]:focus,.infoLink[disabled]:active,.infoLink[disabled]:hover,.infoLink[disabled]:visited{
+    color: rgba(153,153,153, 0.5);
+}
+.infoLink, .infoLink:focus,.infoLink:active,.infoLink:hover,.infoLink:visited{
+    color: #999;
+}
+.underlink span{
+    display: inline-block;
+    text-decoration: underline;
+}
+/* 按钮尺寸 */
+.mediumBtn {
+    padding: 5px 15px 5px;
+    line-height: 19px;
+    font-size: 14px;
+}
+.smallBtn {
+    padding: 5px 13px 4px;
+    font-size: 12px;
+    line-height: 16px;
+}
+/* 单选框 */
+.ant-radio-wrapper {
+    margin: 0;
+    color: #333;
+    line-height: 0;
+    font-size: 0;
+}
+.ant-radio-wrapper span, .ant-checkbox + span{
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+.ant-radio-inner, .ant-checkbox-inner{
+    width: 14px;
+    height: 14px;
+    border-color: #d9d9d9;
+    margin-right: 10px;
+}
+.ant-radio-inner::after {
+    top: 2px;
+    left: 2px;
+    background-color: #3171f5;
+}
+.ant-radio-checked .ant-radio-inner{
+    border-color: #3171f5;
+}
+.ant-radio-disabled .ant-radio-inner {
+    background-color: #fff;
+    border-color: #d9d9d9 !important;
+}
+.ant-radio-disabled + span {
+    color: rgba(51,51,51,0.5);
+}
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled),
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover,
+.ant-checkbox-checked .ant-checkbox-inner{
+    background: #3171f5;
+    border-color: #3171f5;
+}
+.ant-radio-button-wrapper {
+    padding: 0 13px;
+}
+.ant-radio-group {
+    font-size: 12px;
+}
+.ant-radio-button-wrapper:hover {
+    color: #3171f5;
+}
+.radio_disabled .ant-radio-disabled .ant-radio-inner{
+    border-color: rgba(217,217,217,0.5)!important;
+    background: rgba(236,237,238, 0.5);
+}
+/* 多选框 */
+.ant-checkbox-checked .ant-checkbox-inner::after {
+    border-width: 1px;
+    border-color: #fff!important;
+}
+.ant-checkbox-inner::after {
+    width: 3.5px;
+    height: 6.5px;
+    font-size: 8px;
+}
+.ant-checkbox + span {
+    color: #333;
+}
+.ant-checkbox-checked::after {
+    border: none;
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: #3171f5;
+}
+.checkbox-checked_disabled .ant-checkbox-inner{
+    border-color: #ebebeb!important;
+    background: #ebebeb;
+}
+.checkbox_disabled .ant-checkbox-inner {
+    border-color: rgba(217,217,217,0.5)!important;
+    background: rgba(236,237,238, 0.5);
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
+    height: 1px;
+    background-color: #fff;
+}
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+    background-color: #3171f5;
+    border-color: #3171f5;
+}
+/* 输入框 */
+.ant-input, .ant-input-password{
+    width: 300px;
+    padding: 6px 12px;
+    color: #333;
+}
+.ant-input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+.ant-input:hover, .ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled),
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled){
+    border-color: #c9c9c9;
+}
+.ant-input:focus, .ant-input-password:focus,
+.compactInput .ant-select-selection:hover,
+.compactInput .ant-select-selection:active,
+.compactInput .ant-select-selection:focus,
+.ant-select-open .ant-select-selection{
+    border-color: #3171f5;
+    box-shadow: none;
+}
+.ant-input[disabled] {
+    background-color: #ecedee;
+}
+.ant-input-password {
+    padding: 0;
+}
+.ant-input-password-icon {
+    color: #ccc;
+}
+.inputPassword svg {
+    display: none;
+}
+.inputPassword .anticon-eye-invisible, .inputPassword .anticon-eye{
+    width: 10px;
+    height: 8px;
+    background: url('../../assets/css/eyeVisible.png') no-repeat;
+    background-size: 10px auto;
+}
+.inputPassword .anticon-eye {
+    background: url('../../assets/css/eye.png') no-repeat;
+    background-size: 10px auto;
+}
+.clearInput {
+    width: 300px;
+}
+.clearInput .ant-input-clear-icon {
+    color: #ccc;
+}
+/* 表单 */
+.ant-form-item-required::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    vertical-align: middle;
+    background-color: #f93a4a;
+    border-radius: 50%;
+}
+.ant-form-item-label > label::after {
+    content: '';
+    margin: 0;
+    margin-right: 6px;
+}
+.has-error .ant-input {
+    border-color: #f93a4a;
+}
+.has-error .ant-form-explain {
+    display: inline-block;
+    color: #f93a4a;
+}
+.inputForm {
+    display: inline-block;
+    width: 700px;
+}
+.has-error .ant-form-explain::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px 0 12px;
+    background: url('../../assets//css//error.png') no-repeat;
+    background-size: 12px auto;
+}
+.dataPicker{
+    width: 300px;
+    margin-right: 20px;
+}
+.dataPicker .ant-calendar-picker-icon {
+    left: 12px;
+}
+.dataPicker .ant-input , .searchInput .ant-input {
+    padding: 6px 0 6px 30px;
+}
+.ant-calendar-picker-icon {
+    margin-top: -5px;
+    background: url('../../assets/css/datePicker.png') no-repeat;
+    background-size: 12px auto;
+}
+.ant-calendar-picker-icon, .ant-input-search-icon{
+    width: 12px;
+    height: 12px;
+}
+.dataPicker .ant-calendar-picker-clear {
+    width: 12px;
+    height: 12px;
+    color: #ccc;
+}
+.searchInput {
+    /* position: relative; */
+    width: 300px;
+}
+.searchInput .ant-input-suffix{
+    position: absolute;
+    left: 12px;
+    margin-top: 1px;
+}
+.dataPicker .ant-calendar-picker-icon svg, .searchInput .ant-input-search-icon svg{
+    display: none;
+}
+.searchInput .ant-input-search-icon{
+    background: url('../../assets/css/search.png') no-repeat;
+    background-size: 12px auto;
+}
+.searchInput .ant-input:not(:last-child) {
+    padding-right: 0!important;
+}
+.ant-input-group-compact,.ant-input-group.ant-input-group-compact {
+    display: inline-block;
+    width: 320px;
+}
+.ant-input-group-wrapper {
+    width: auto;
+}
+.compactInput .ant-select {
+    width: 100px;
+}
+.compactInput .ant-select-selection__rendered{
+    margin: 0 12px;
+}
+.compactInput .ant-select-selection-selected-value, .compactInput .anticon-down, .anticon-down{
+    font-size: 14px;
+    color: #666;
+}
+.compactInput .anticon-down, .anticon-down{
+    font-size: 10px;
+}
+.compactInput .ant-select-selection__placeholder {
+    color: #999;
+}
+.ant-select-dropdown {
+    overflow-x: hidden;
+    width: 180px!important;
+    height: 120px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background: #fff;
+}
+.ant-select-dropdown::-webkit-scrollbar {
+    width: 4px;
+    height: 63px;
+    background-color: #fff;
+}
+.ant-select-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 2px;
+}
+.ant-select-dropdown::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 2px;
+}
+.ant-select-dropdown-content ul li{
+    margin-bottom: 0;
+}
+.ant-select-dropdown-menu-item-selected, .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled),
+.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled){
+    background-color: #f5f7fa;
+}
+.compactInput .ant-btn-primary, .compactInput .ant-input-search-button:hover {
+    background: none;
+    border:  none;
+    box-shadow: none;
+}
+.compactInput .ant-input-search-enter-button input + .ant-input-group-addon {
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+    background-color: #f5f7fa;
+}
+.compactInput .ant-input-search-enter-button input + .ant-input-group-addon .ant-input-search-button {
+    height: 30px;
+}
+.compactInput .ant-input-search svg {
+    display: none;
+}
+.compactInput .anticon-search {
+    display: inline-block;
+    position: absolute;
+    right: 11px;
+    top: 9px;
+    width: 12px;
+    height: 12px;
+    background: url('../../assets/css/search.png') no-repeat;
+    background-size: 12px auto;
+}
+.ant-input-number {
+    width: 120px;
+}
+.ant-input-number:hover {
+    border-color: #d9d9d9;
+}
+.ant-input-number-input{
+    width: 80px;
+    padding: 0;
+    text-align: center;
+}
+.ant-input-number-handler-wrap {
+    width: 40px;
+    opacity: 1;
+}
+.ant-input-number-handler-up, .ant-input-number-handler-down{
+    background-color: #f5f7fa;
+}
+.ant-input-number-handler-up-inner,.ant-input-number-handler-down-inner {
+    left: 15px;
+}
+/* 选择器 */
+.ant-select {
+    width: 180px;
+}
+.ant-select-selection__placeholder, .ant-select-search__field__placeholder {
+    color: #999;
+}
+.ant-select-selection--single {
+    height: 30px;
+}
+.ant-select-selection--single .ant-select-selection__rendered {
+    margin-right: 22px;
+}
+.ant-select-selection:hover,.ant-select-selection:active,.ant-select-selection:focus,.ant-select-open .ant-select-selection{
+    border-color: #d9d9d9;
+}
+.ant-select-dropdown-menu-item-disabled,.ant-select-dropdown-menu-item-disabled:hover,.ant-select-dropdown-menu-item-disabled:visited,
+.ant-select-dropdown-menu-item-disabled:active, .ant-select-dropdown-menu-item-disabled:focus {
+    color: #999;
+}
+.ant-select-disabled {
+    background-color: #ecedee;
+}
+.ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
+    border-color: #3171f5;
+    box-shadow: none;
+}
+/* 树形选择器 */
+.ant-select-selection ul li {
+    margin: 0;
+}
